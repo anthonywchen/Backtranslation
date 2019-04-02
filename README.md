@@ -2,7 +2,7 @@
 
 A repository for generating paraphrases via backtranslation. 
 
-Tested on `Ubuntu 18.04.2 LTS (Bionic Beaver)`. 
+Tested on `Ubuntu 18.04.2 LTS (Bionic Beaver)` and with . 
 
 ## Steps
 
@@ -13,13 +13,15 @@ git clone https://github.com/anthonywchen/Backtranslation.git
 cd Backtranslation/
 
 # Create virtualenv
-virtualenv --python=3.6 ENV
+virtualenv --python=python3.6 ENV
 source ENV/bin/activate
 
 # Install requirements
 chmod 700 download.sh
 ./download.sh
 pip install -r requirements.txt
+
+chmod 700 paraphrase.sh
 ```
 
 For a source file where each line contains a sentence to be paraphrased, run

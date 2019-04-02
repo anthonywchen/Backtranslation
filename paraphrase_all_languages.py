@@ -3,7 +3,7 @@ import os
 from os.path import join
 
 BEAM_SIZE = 2
-TARGET_LANGUAGES = ['cs']#, 'de', 'ru']
+TARGET_LANGUAGES = ['cs', 'de', 'ru']
 WMT16_PATH = '/home/tony/backtranslation/nematus/wmt16_systems'
 
 if __name__ == '__main__':
