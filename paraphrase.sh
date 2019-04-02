@@ -13,9 +13,9 @@ SRC=en # suffix of source language
 TRG=$2 # suffix of target language
 BEAM_SIZE=$3
 
-mosesdecoder=/home/tony/backtranslation/mosesdecoder 	# path to moses decoder: https://github.com/moses-smt/mosesdecoder
-subword_nmt=/home/tony/backtranslation/subword-nmt 		# path to subword segmentation scripts: https://github.com/rsennrich/subword-nmt
-nematus=/home/tony/backtranslation/nematus 				# path to nematus ( https://www.github.com/rsennrich/nematus )
+mosesdecoder=$(realpath "mosesdecoder")				 	# path to moses decoder: https://github.com/moses-smt/mosesdecoder
+subword_nmt=$(realpath "subword-nmt")				 	# path to subword segmentation scripts: https://github.com/rsennrich/subword-nmt
+nematus=$(realpath "nematus") 							# path to nematus ( https://www.github.com/rsennrich/nematus )
 
 FORWARD="$nematus/wmt16_systems/$SRC-$TRG"				# path to source to target translation models and parameters
 BACKWARD="$nematus/wmt16_systems/$TRG-$SRC"				# path to target to source translation models and parameters
@@ -25,14 +25,14 @@ BACKWARD="$nematus/wmt16_systems/$TRG-$SRC"				# path to target to source transl
 ################################
 
 # preprocess
-tmpfile="/home/tony/backtranslation/tmpfile.txt"
+tmpfile=$(realpath "tmpfile.txt")
 
 $mosesdecoder/scripts/tokenizer/normalize-punctuation.perl -l $SRC | \
 $mosesdecoder/scripts/tokenizer/tokenizer.perl -l $SRC -penn | \
 $mosesdecoder/scripts/recaser/truecase.perl -model $FORWARD/truecase-model.$SRC | \
-$subword_nmt/apply_bpe.py -c $FORWARD/$SRC$TRG.bpe < $input_file > $tmpfile
+$subword_nmt/apply_bpe.py -c $FORWARD/$SRC$TRG.bpe < $input_file > $tmpfile &
 
-sleep .1
+sleep 1
 
 # forward translate
 forward_file=$input_file.$TRG.forward
