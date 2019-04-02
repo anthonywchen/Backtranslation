@@ -2,7 +2,7 @@ import argparse
 import os
 from os.path import join
 
-BEAM_SIZE = 2
+BEAM_SIZE = 4
 TARGET_LANGUAGES = ['cs', 'de', 'ru']
 WMT16_PATH = 'nematus/wmt16_systems'
 

@@ -16,7 +16,7 @@ cd Backtranslation/
 virtualenv --python=python3.6 ENV
 source ENV/bin/activate
 
-# Install requirements
+# Install requirements and downloads pretrained translation models (32 GB)
 chmod 700 download.sh
 ./download.sh
 pip install -r requirements.txt
