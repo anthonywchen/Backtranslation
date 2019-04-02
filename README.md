@@ -2,7 +2,7 @@
 
 A repository for generating paraphrases via backtranslation. 
 
-Tested on `Ubuntu 18.04.2 LTS (Bionic Beaver)` and with . 
+Tested on `Ubuntu 18.04.2 LTS (Bionic Beaver)` and with `TensorFlow 1.13.1`. 
 
 ## Steps
 
