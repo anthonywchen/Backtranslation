@@ -7,7 +7,7 @@ Tested on `Ubuntu 18.04.2 LTS (Bionic Beaver)` and with `TensorFlow 1.13.1`.
 
 ## Steps
 
-Run the following where you want clone the repository:
+Run the following where you want to clone the repository:
 ```
 # Clone repository
 git clone https://github.com/anthonywchen/Backtranslation.git
