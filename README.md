@@ -1,3 +1,4 @@
+
 # Backtranslation
 
 A repository for generating paraphrases via backtranslation. 
@@ -38,8 +39,8 @@ Downloads repositories for tokenization, byte-pair-encoding, and translation as 
 Python packages to download.
 
 **paraphrase_all_languages.py**
-Top level script that creates paraphrases using three different pivot languages. Run this! Creates `BEAM_SIZE^2` number of paraphrases per pivot language. 
-Modify `BEAM_SIZE` in this script. 
+Top level script that creates paraphrases using three different pivot languages. Run this! Creates `BEAM_SIZE^2` number of paraphrases per pivot language. Modify `BEAM_SIZE` in this script. At the end, the back translations among various languages are merged into one file with extension ```.backtranslations```.
+ 
 ```
 $ python paraphrase_all_languages.py -h
 usage: paraphrase_all_languages.py [-h] source_file
