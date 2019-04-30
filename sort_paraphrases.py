@@ -21,7 +21,7 @@ if __name__ == '__main__':
 
 	output_file = open(back_path+'.sorted', 'w')
 
-	for source_line in source_file:    
+	for source_line in source_file:
 	    source_line = source_line.strip()
 	    back_lines = []
 	    
@@ -35,6 +35,8 @@ if __name__ == '__main__':
 	            back_line = next(back_file)
 	            _, back_translated, back_score = back_line.strip().split('|||')
 	            
+	            # Fix issue in the detokenization of apostrophes in the backtranslation
+	            back_translated = back_translated.replace(' &apos;', "'").replace('&apos;', "'")
 	            # Append the backtranslation along with forward*backward score
 	            back_lines.append((back_translated, float(back_score)*float(forward_score)))
 	    
@@ -43,3 +45,4 @@ if __name__ == '__main__':
 	    back_lines = [(e[0].strip(), round(e[1], 2)) for e in back_lines]
 
 	    output_file.write(source_line + '\t' + back_lines.__repr__() + '\n')
+	output_file.close()
